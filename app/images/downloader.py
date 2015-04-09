@@ -53,9 +53,10 @@ for i in a:
                     image = Image()
                     image_url_array = image_url.split("/")
                     image.path = image_url_array[len(image_url_array)-1]
-                    f = urllib2.urlopen(image_url)
-                    with open(prefix+image.path, "wb") as code:
-                        code.write(f.read())
+                    if not os.path.isfile(prefix+image.path):
+                        f = urllib2.urlopen(image_url)
+                        with open(prefix+image.path, "wb") as code:
+                            code.write(f.read())
                     image.location = ""
                     image.lat = 00.00
                     image.lon = 00.00
@@ -65,6 +66,6 @@ for i in a:
                     image.title = title
                     image.source = link
                     image.license = "PB"
-                    print image
+                    print image.source
                     db.session.add(image)
                     db.session.commit()

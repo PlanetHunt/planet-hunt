@@ -1,5 +1,5 @@
 from app.app_and_db import db
-from app.likes.models import *
+import app.likes.models
 
 
 class Image(db.Model):
