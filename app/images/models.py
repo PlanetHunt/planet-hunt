@@ -1,6 +1,5 @@
 from app.app_and_db import db
 
-
 class Image(db.Model):
     __tablename__ = "image"
     id = db.Column(db.Integer, primary_key=True)
@@ -12,4 +11,10 @@ class Image(db.Model):
     size = db.Column(db.Integer)
     likes = db.relationship("Like", backref="image")
 
-    
+    @classmethod
+    def latest_images(self, count = 9):
+        images = {}
+        for counter, image in enumerate(db.session.query(Image).order_by(Image.add_at).limit(count)):
+            images[counter] = image
+
+        return images
