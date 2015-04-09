@@ -1,0 +1,12 @@
+{% extends "base_templates/page_base.html" %}  
+{# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block main %}
+<h1>id is {{ id }}</h1>
+{% if image_path %}
+<p>path is {{image_path}}</p>
+<div class="th">
+<img src="/static/app/images/{{image_path}}">
+</div>
+{% endif %}
+{% endblock %}

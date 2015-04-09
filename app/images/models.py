@@ -11,3 +11,5 @@ class Image(db.Model):
     add_at = db.Column(db.DateTime())
     size = db.Column(db.Integer)
     likes = db.relationship("Like", backref="image")
+
+    

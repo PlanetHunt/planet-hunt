@@ -13,8 +13,6 @@ from app.users.forms import UserProfileForm
 #
 # User Profile form
 #
-
-
 @app.route('/user/profile', methods=['GET', 'POST'])
 @login_required
 def user_profile_page():

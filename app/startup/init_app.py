@@ -41,6 +41,7 @@ def init_app(app, db, extra_config_settings={}):
     # Load all views.py files to register @app.routes() with Flask
     from app.pages import views
     from app.users import views
+    from app.images import views
 
     return app
 
