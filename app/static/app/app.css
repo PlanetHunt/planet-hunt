@@ -11,3 +11,8 @@ hr { border-color: #cccccc; margin: 0px; }
 .with-margins { margin: 10px; }
 
 .col-centered { float: none; margin: 0 auto; }
+
+.footer{
+	position:fixed;
+	bottom:0;
+}
