@@ -12,9 +12,18 @@ class Image(db.Model):
     likes = db.relationship("Like", backref="image")
 
     @classmethod
-    def latest_images(self, count = 9):
+    def latest_images(self, count = 6):
         images = {}
         for counter, image in enumerate(db.session.query(Image).order_by(Image.add_at).limit(count)):
             images[counter] = image
 
         return images
+
+    @classmethod
+    def favourite_images(self, count = 6):
+        images = {}
+        
+        # for counter, image in enumerate(db.session.query(Image).join(Image, Like.image_id).limit(count)):
+        #     images[counter] = image
+
+        return images 

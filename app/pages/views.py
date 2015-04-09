@@ -14,7 +14,9 @@ from app.app_and_db import app
 @app.route('/')
 def home_page():
 
-    return render_template('pages/home_page.html', images = Image.latest_images(1))
+    return render_template('pages/home_page.html', 
+    	latest_images = Image.latest_images(3),
+    	favourite_images = Image.favourite_images(3))
 
 # The Member page is accessible to authenticated users (users that have logged in)
 @app.route('/member')

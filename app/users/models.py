@@ -3,7 +3,7 @@
 # Authors: Ling Thio <ling.thio@gmail.com>
 
 from flask_user import UserMixin
-from ..likes.models import Like
+from app.likes.models import Like
 from app.app_and_db import db
 
 
