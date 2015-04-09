@@ -42,6 +42,7 @@ def init_app(app, db, extra_config_settings={}):
     from app.pages import views
     from app.users import views
     from app.images import views
+    from app.likes import views
 
     return app
 

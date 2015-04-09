@@ -1,18 +1,14 @@
 {% macro grid(images, type='text') -%}
 {% if images %}
 <ul class="small-block-grid-3">
-	{% for counter, image in images.iteritems() %}
+{% for counter, image in images.iteritems() %}
 	<li><img src="/static/app/images/{{image.path}}" class="th"></li>
-	
-	{% if counter is divisibleby 3 %}
-		</ul>
-		<ul class="small-block-grid-3">
+	{% if counter+1%5==0 %}
+		</ul><ul class="small-block-grid-3">
 	{% endif %}
-
 	{% endfor %}
 </ul>
 <p>{{images.__len__()}} images available</p>
 
 {% endif %}
 {%- endmacro %}
-
