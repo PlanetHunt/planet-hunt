@@ -5,6 +5,7 @@
 
 from flask import render_template
 from flask_user import login_required, roles_required
+from app.images.models import Image
 
 from app.app_and_db import app
 
@@ -12,7 +13,10 @@ from app.app_and_db import app
 # The Home page is accessible to anyone
 @app.route('/')
 def home_page():
-    return render_template('pages/home_page.html')
+
+    return render_template('pages/home_page.html', 
+    	latest_images = Image.latest_images(3),
+    	favourite_images = Image.favourite_images(3))
 
 # The Member page is accessible to authenticated users (users that have logged in)
 @app.route('/member')

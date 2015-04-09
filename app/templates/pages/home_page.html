@@ -1,17 +1,27 @@
-{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+{% extends "base_templates/page_base.html" %}  
+{# base_templates/page_base.html extends base_templates/base.html #}
+
+{% from "images/images_macros.html" import grid as grid %}
 
 {% block main %}
 <h1>Home page</h1>
-
-<p>This page is accessible to any user.</p>
-
 {% if not current_user.is_authenticated() %}
 <p>
-To view the Member page, you must
-<a href="{{ url_for('user.login') }}">Sign in</a> or
-<a href="{{ url_for('user.register') }}">Register</a>.
+You can
+<a href="{{ url_for('user.login') }}">sign in</a> or
+<a href="{{ url_for('user.register') }}">register</a>.
 </p>
 {% endif %}
+<<<<<<< HEAD
+<br />
+Favourite images:
+{{ grid(favourite_images) }}
+Latest images:
+{{ grid(latest_images) }}
+
+=======
 
 <p>Images</p>
+>>>>>>> master
 {% endblock %}
+

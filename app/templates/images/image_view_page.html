@@ -1,0 +1,13 @@
+{% extends "base_templates/page_base.html" %}  
+{# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block main %}
+{% if image_path %}
+<ul class="small-block-grid-3">
+	<li></li>
+	<li><img src="/static/app/images/{{image_path}}" class="th"></li>
+	<li></li>
+</ul>
+{% endif %}
+
+{% endblock %}

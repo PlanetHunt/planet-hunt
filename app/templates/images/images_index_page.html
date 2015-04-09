@@ -1,0 +1,8 @@
+{% extends "base_templates/base.html" %}  
+
+{% block main %}
+
+{% from "images/images_macros.html" import grid as grid %}
+{{ grid(images) }}
+
+{% endblock %}
