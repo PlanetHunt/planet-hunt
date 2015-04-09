@@ -10,12 +10,8 @@ from app.app_and_db import app,db
 
 @app.route('/images/')
 def images_page():
-	paths = []
 
-	for image in db.session.query(Image).all():
-		paths.append(image.path)
-
-	return render_template('images/images_index_page.html', paths=paths)
+	return render_template('images/images_index_page.html', images=Image.latest_images(12))
 
 @app.route('/image/')
 @app.route('/image/<id>')

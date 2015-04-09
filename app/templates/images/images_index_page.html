@@ -2,11 +2,7 @@
 
 {% block main %}
 
-<ul class="clearing-thumbs" data-clearing>
-	{% for path in paths %}
-	<li><a href="/static/app/images/{{path}}">
-	<img src="/static/app/images/{{path}}"></a></li>
-	{% endfor %}
-</ul>
+{% from "images/images_macros.html" import grid as grid %}
+{{ grid(images) }}
 
 {% endblock %}
