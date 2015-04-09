@@ -12,5 +12,7 @@ class Image(db.Model):
     published_at = db.Column(db.DateTime())
     size = db.Column(db.Float)
     desc = db.Column(db.Text)
+    source = db.Column(db.Text)
+    license = db.Column(db.String(255))
     title = db.Column(db.String(255))
     likes = db.relationship("Like", backref="image")
