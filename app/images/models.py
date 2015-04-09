@@ -1,4 +1,5 @@
 from app.app_and_db import db
+import app.likes.models
 
 
 class Image(db.Model):
