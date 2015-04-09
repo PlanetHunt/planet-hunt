@@ -2,12 +2,12 @@
 {# base_templates/page_base.html extends base_templates/base.html #}
 
 {% block main %}
-<h1>id is {{ id }}</h1>
 {% if image_path %}
-<p>path is {{image_path}}</p>
-<div class="th">
-<img src="/static/app/images/{{image_path}}">
-</div>
+<ul class="small-block-grid-3">
+	<li></li>
+	<li><img src="/static/app/images/{{image_path}}" class="th"></li>
+	<li></li>
+</ul>
 {% endif %}
 
 {% endblock %}
